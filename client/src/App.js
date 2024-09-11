@@ -43,7 +43,8 @@ const App = () => {
   }, [location.search, navigate, temp_acc, currentTime, idToken, idTokenInfo1]);
 
   const getAuthCode = (clientId) => {
-    const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=http://localhost:8080/callback&response_type=code&scope=openid profile email&access_type=offline`;
+    const redirectUri = 'http://localhost:8080/callback';
+    const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=openid profile email&access_type=offline`;
     window.location.href = authUrl;
   };
 
